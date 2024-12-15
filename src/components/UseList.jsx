@@ -1,10 +1,13 @@
 import React from "react";
+import DisplayUsers from "./DisplayUsers";
 
-function UseList() {
+function UseList(props) {
   return (
-    <section>
-      <div>UseList</div>
-    </section>
+    <div>
+      {props.users.map((user) => {
+        return <DisplayUsers key={user.id} user={user} />;
+      })}
+    </div>
   );
 }
 
